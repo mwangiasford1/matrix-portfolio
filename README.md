@@ -178,7 +178,7 @@ This project is licensed under the MIT License.
 
 **Asford Mwangi**
 - Email: mwangiasford12@gmail.com
-- GitHub: [@asford](https://github.com/asford)
+- GitHub: [@asford](https://github.com/mwangiasford1)
 - LinkedIn: [Asford Mwangi](https://linkedin.com/in/asford)
 
 ---
