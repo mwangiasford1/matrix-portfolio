@@ -536,6 +536,7 @@ function App() {
                 className="w-full bg-black/20 backdrop-blur-sm border border-matrix-green/50 p-4 focus:border-matrix-green focus:shadow-lg focus:shadow-matrix-green/20 outline-none transition-all duration-300 rounded-lg"
                 required
                 disabled={isSubmitting}
+                maxLength={100}
               />
               <input
                 type="email"
@@ -545,6 +546,7 @@ function App() {
                 className="w-full bg-black/20 backdrop-blur-sm border border-matrix-green/50 p-4 focus:border-matrix-green focus:shadow-lg focus:shadow-matrix-green/20 outline-none transition-all duration-300 rounded-lg"
                 required
                 disabled={isSubmitting}
+                maxLength={254}
               />
               <textarea
                 placeholder="MESSAGE"
@@ -554,6 +556,7 @@ function App() {
                 className="w-full bg-black/20 backdrop-blur-sm border border-matrix-green/50 p-4 focus:border-matrix-green focus:shadow-lg focus:shadow-matrix-green/20 outline-none resize-none transition-all duration-300 rounded-lg"
                 required
                 disabled={isSubmitting}
+                maxLength={1000}
               />
               <button
                 type="submit"
