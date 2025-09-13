@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-matrix-dark text-matrix-green font-mono;
+  }
+  
+  * {
+    @apply transition-colors duration-300;
+  }
+}
+
+@layer components {
+  .matrix-text {
+    @apply text-matrix-green animate-glow;
+  }
+  
+  .glitch {
+    @apply relative;
+  }
+  
+  .glitch:hover::before {
+    content: attr(data-text);
+    @apply absolute top-0 left-0 text-red-500 animate-pulse;
+    clip: rect(0, 900px, 0, 0);
+  }
+  
+  .hover\:glow:hover {
+    text-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41, 0 0 30px #00ff41;
+  }
+}
+
+@layer utilities {
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+}
