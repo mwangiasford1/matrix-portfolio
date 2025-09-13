@@ -22,7 +22,7 @@ If you have a backend deployed, update your frontend to use the Render backend U
 
 ```javascript
 // In your frontend code, update API calls
-const API_BASE_URL = 'https://your-backend-name.onrender.com';
+const API_BASE_URL = 'https://matrix-portfolio-7miu.onrender.com';
 ```
 
 ## 🌐 Step 2: Deploy to Render
