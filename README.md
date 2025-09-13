@@ -10,7 +10,7 @@ A modern, interactive portfolio website featuring Matrix-themed animations, buil
 
 ## ✨ Live Demo
 
-🌐 **[View Live Portfolio](https://matrix-portfolio.vercel.app)** | 📱 **[Mobile View](https://matrix-portfolio.vercel.app)**
+🌐 **[View Live Portfolio](https://matrix-portfolio-1.onrender.com)** | 📱 **[Mobile View](https://matrix-portfolio-1.onrender.com)**
 
 ## 🎯 Project Overview
 
@@ -86,11 +86,15 @@ matrix-portfolio/
 - **Nodemailer** - Email sending service
 - **CORS** - Cross-origin resource sharing
 
+### Creative & Design Tools
+- **Canva** - Graphics design and visual content creation
+- **OBS Studio** - Live streaming and recording
+- **VirtualDJ** - DJ software with custom scripting
+
 ### Development Tools
 - **Git** - Version control
 - **GitHub** - Code repository hosting
-- **Vercel** - Frontend deployment
-- **Render/Railway** - Backend deployment
+- **Render** - Frontend & Backend deployment
 - **PostCSS** - CSS processing
 
 ## 🚀 Quick Start
@@ -293,6 +297,9 @@ npm test             # Run tests
 - **Lighthouse Score**: 95+ (Performance)
 - **Mobile Responsiveness**: 100%
 - **Browser Support**: Chrome, Firefox, Safari, Edge
+- **Deployment Status**: ✅ Live on Render
+- **Database**: MongoDB Atlas (Cloud)
+- **Email Service**: Gmail SMTP
 
 ## 👨‍💻 Author
 
@@ -301,7 +308,8 @@ npm test             # Run tests
 - 📧 **Email**: ashyydj@gmail.com
 - 🐙 **GitHub**: [@mwangiasford1](https://github.com/mwangiasford1)
 - 💼 **LinkedIn**: [Asford Mwangi](https://linkedin.com/in/asford)
-- 🌐 **Portfolio**: [matrix-portfolio.vercel.app](https://matrix-portfolio.vercel.app)
+- 🎮 **Discord**: [Join Server](https://discord.gg/NGpwKdYRPY)
+- 🌐 **Portfolio**: [matrix-portfolio-1.onrender.com](https://matrix-portfolio-1.onrender.com)
 
 ## 🙏 Acknowledgments
 
