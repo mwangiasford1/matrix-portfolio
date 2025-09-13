@@ -233,8 +233,19 @@ app.get('/api/contacts', async (req, res) => {
 app.get('/api/health', (req, res) => {
   res.json({ 
     status: 'OK', 
+    version: '2.0.0',
     timestamp: new Date().toISOString(),
     uptime: process.uptime()
+  });
+});
+
+// Version endpoint
+app.get('/api/version', (req, res) => {
+  res.json({ 
+    version: '2.0.0',
+    name: 'Matrix Portfolio API',
+    description: 'Secure Backend API for Matrix Portfolio',
+    features: ['Security Enhanced', 'Rate Limited', 'Spam Protected']
   });
 });
 

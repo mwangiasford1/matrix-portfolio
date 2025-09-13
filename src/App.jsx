@@ -633,6 +633,7 @@ function App() {
           </div>
           <div className="border-t border-matrix-green/30 pt-6 text-center">
             <p className="text-sm opacity-70">© 2025 Asford Mwangi. All rights reserved. Built with React & Matrix vibes.</p>
+            <p className="text-xs opacity-50 mt-2">Matrix Portfolio v2.0.0 - Security Enhanced</p>
           </div>
         </div>
       </footer>
