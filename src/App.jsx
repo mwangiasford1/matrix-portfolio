@@ -190,7 +190,7 @@ function App() {
                   </div>
                   <div>
                     <h4 className="text-matrix-green font-semibold mb-2">Creative Media</h4>
-                    <p className="text-sm opacity-80">OBS Studio, NDI, Teleport, VirtualDJ Scripting</p>
+                    <p className="text-sm opacity-80">OBS Studio, NDI, Teleport, VirtualDJ Scripting, Canva</p>
                   </div>
                   <div>
                     <h4 className="text-matrix-green font-semibold mb-2">Automation</h4>
@@ -272,6 +272,12 @@ function App() {
                   company: 'University',
                   period: '2025 - Present',
                   description: 'Studying computer science with focus on backend development and system design'
+                },
+                {
+                  title: 'Graphics Designer',
+                  company: 'Freelance',
+                  period: '2024 - Present',
+                  description: 'Creating visual content and brand materials using Canva for various clients'
                 },
                 {
                   title: 'Creative Media Specialist',
