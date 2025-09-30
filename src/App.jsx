@@ -164,7 +164,7 @@ function App() {
                 <div className="relative group">
                   <div className="absolute -inset-1 bg-gradient-to-r from-matrix-green to-green-400 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
                   <img 
-                    src="https://scontent-mba2-1.xx.fbcdn.net/v/t39.30808-6/500190982_4122371794686873_3495693403842944140_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHer_srndQuKwcYsDnq8MSB0a0-P1d4iU_RrT4_V3iJTyXiSa8Ge0R78gHf4zfSfpyaguZmyH5q1AW-ingI0sVH&_nc_ohc=51e7CLy2VwAQ7kNvwE7m4o6&_nc_oc=AdlZ9KFpjPUgXhxDd7HI9v7zDirq6QMWr9mruIpcceT4153nRDgQ3hIoOwAAGXPVqMA&_nc_zt=23&_nc_ht=scontent-mba2-1.xx&_nc_gid=wcLlNxVO554weQddRLEBOQ&oh=00_AfatlCvjVn8_4cQ7phN8NDVuW6R_Z53aqKq0Fi-j8-m1Gw&oe=68CAE268"
+                    src=".\public\images\38aebe24-e88a-48b8-bb05-fcd23d881f03_2_watermark.jpeg"
                     alt="Asford Mwangi - Backend Developer and Software Engineering Student"
                     loading="lazy"
                     onError={(e) => {e.target.src = '/images/profile-placeholder.svg'}}
