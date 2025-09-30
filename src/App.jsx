@@ -163,13 +163,16 @@ function App() {
               <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
                 <div className="relative group">
                   <div className="absolute -inset-1 bg-gradient-to-r from-matrix-green to-green-400 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-                  <img src="/images/38aebe24-e88a-48b8-bb05-fcd23d881f03_2_watermark.jpeg" alt="Watermark" 
-                
-                    alt="Asford Mwangi - Backend Developer and Software Engineering Student"
-                    loading="lazy"
-                    onError={(e) => {e.target.src = '/images/profile-placeholder.svg'}}
-                    className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 object-cover rounded-2xl border-2 border-matrix-green/30 shadow-2xl shadow-matrix-green/20 transition-all duration-300 group-hover:scale-105 group-hover:border-matrix-green"
-                  />
+                 <img src="/images/38aebe24-e88a-48b8-bb05-fcd23d881f03_2_watermark.jpeg" 
+
+                     alt="Asford Mwangi - Backend Developer and Software Engineering Student"
+                     loading="lazy"
+                     onError={(e) => {
+                     e.target.src = '/images/profile-placeholder.svg';
+                     }}
+  className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 object-cover rounded-2xl border-2 border-matrix-green/30 shadow-2xl shadow-matrix-green/20 transition-all duration-300 group-hover:scale-105 group-hover:border-matrix-green"
+/>
+
                   <div className="absolute inset-0 bg-black/10 rounded-2xl group-hover:bg-transparent transition-all duration-300"></div>
                 </div>
               </div>
@@ -300,44 +303,74 @@ function App() {
         </section>
 
         {/* Education Section */}
-        <section id="education" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-          <div className="max-w-4xl mx-auto w-full">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 sm:mb-12 text-center matrix-text">🎓 EDUCATION.EDU</h2>
-            <div className="space-y-8">
-              <div className="bg-black/20 backdrop-blur-md border border-matrix-green/30 p-6 rounded-lg hover:border-matrix-green transition-all duration-300">
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4">
-                  <div>
-                    <h3 className="text-xl font-bold matrix-text mb-2">Power Learn Project (PLP)</h3>
-                    <p className="text-lg opacity-90 mb-2">Software Engineering Track</p>
-                    <p className="text-sm text-matrix-green mb-3">Specialization: MERN Stack Development</p>
-                  </div>
-                  <div className="text-4xl">🚀</div>
-                </div>
-                <div className="space-y-2 text-sm opacity-80">
-                  <p>• Backend focus with hands-on API development and deployment</p>
-                  <p>• Creative media integration and automation scripting</p>
-                  <p>• Full-stack development with MongoDB, Express.js, React, Node.js</p>
-                </div>
-              </div>
-              
-              <div className="bg-black/20 backdrop-blur-md border border-matrix-green/30 p-6 rounded-lg hover:border-matrix-green transition-all duration-300">
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4">
-                  <div>
-                    <h3 className="text-xl font-bold matrix-text mb-2">Simplilearn</h3>
-                    <p className="text-lg opacity-90 mb-2">Cybersecurity for Beginners</p>
-                    <p className="text-sm text-matrix-green mb-3">Security Fundamentals Certification</p>
-                  </div>
-                  <div className="text-4xl">🔒</div>
-                </div>
-                <div className="space-y-2 text-sm opacity-80">
-                  <p>• Introduction to cybersecurity principles and threat types</p>
-                  <p>• Basic protection strategies and security best practices</p>
-                  <p>• Hands-on labs and foundational network security concepts</p>
-                </div>
-              </div>
-            </div>
+<section id="education" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+  <div className="max-w-4xl mx-auto w-full">
+    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 sm:mb-12 text-center matrix-text">🎓 EDUCATION.EDU</h2>
+    <div className="space-y-8">
+
+      {/* PLP Card */}
+      <div className="bg-black/20 backdrop-blur-md border border-matrix-green/30 p-6 rounded-lg hover:border-matrix-green transition-all duration-300">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4">
+          <div>
+            <h3 className="text-xl font-bold matrix-text mb-2">Power Learn Project (PLP)</h3>
+            <p className="text-lg opacity-90 mb-2">Software Engineering Track</p>
+            <p className="text-sm text-matrix-green mb-3">Specialization: MERN Stack Development</p>
           </div>
-        </section>
+          <div className="text-4xl">🚀</div>
+        </div>
+        <div className="space-y-2 text-sm opacity-80">
+          <p>• Backend focus with hands-on API development and deployment</p>
+          <p>• Creative media integration and automation scripting</p>
+          <p>• Full-stack development with MongoDB, Express.js, React, Node.js</p>
+        </div>
+      </div>
+
+      {/* Simplilearn Card */}
+      <div className="bg-black/20 backdrop-blur-md border border-matrix-green/30 p-6 rounded-lg hover:border-matrix-green transition-all duration-300">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4">
+          <div>
+            <h3 className="text-xl font-bold matrix-text mb-2">Simplilearn</h3>
+            <p className="text-lg opacity-90 mb-2">Cybersecurity for Beginners</p>
+            <p className="text-sm text-matrix-green mb-3">Security Fundamentals Certification</p>
+          </div>
+          <div className="text-4xl">🔒</div>
+        </div>
+        <div className="space-y-2 text-sm opacity-80">
+          <p>• Introduction to cybersecurity principles and threat types</p>
+          <p>• Basic protection strategies and security best practices</p>
+          <p>• Hands-on labs and foundational network security concepts</p>
+        </div>
+      </div>
+
+      {/* OIAI Certificate Card */}
+      <div className="bg-black/20 backdrop-blur-md border border-matrix-green/30 p-6 rounded-lg hover:border-matrix-green transition-all duration-300">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4">
+          <div>
+            <h3 className="text-xl font-bold matrix-text mb-2">Open Institute of Artificial Intelligence (OIAI)</h3>
+            <p className="text-lg opacity-90 mb-2">AI Foundations & Ethics</p>
+            <p className="text-sm text-matrix-green mb-3">Certificate of Completion</p>
+          </div>
+          <div className="text-4xl">🤖</div>
+        </div>
+        <div className="space-y-2 text-sm opacity-80">
+          <p>• Explored core AI principles, machine learning basics, and ethical frameworks</p>
+          <p>• Applied AI concepts to real-world scenarios and decision-making models</p>
+          <p>• Earned certification for foundational understanding of responsible AI</p>
+          <a
+            href="/documents/OIAI-Certificate-Asford-Mwangi.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mt-4 text-matrix-green underline hover:text-green-400 transition"
+          >
+            View Certificate PDF
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
         {/* Achievements Section */}
         <section id="achievements" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
