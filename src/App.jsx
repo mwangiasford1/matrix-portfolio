@@ -163,8 +163,8 @@ function App() {
               <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
                 <div className="relative group">
                   <div className="absolute -inset-1 bg-gradient-to-r from-matrix-green to-green-400 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-                  <img 
-                    src=".\public\images\38aebe24-e88a-48b8-bb05-fcd23d881f03_2_watermark.jpeg"
+                  <img src="/images/38aebe24-e88a-48b8-bb05-fcd23d881f03_2_watermark.jpeg" alt="Watermark" 
+                
                     alt="Asford Mwangi - Backend Developer and Software Engineering Student"
                     loading="lazy"
                     onError={(e) => {e.target.src = '/images/profile-placeholder.svg'}}
