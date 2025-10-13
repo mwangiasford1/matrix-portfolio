@@ -341,7 +341,7 @@ function App() {
       <div className="bg-black/20 backdrop-blur-md border border-matrix-green/30 p-6 rounded-lg hover:border-matrix-green transition-all duration-300">
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4">
           <div>
-            <h3 className="text-xl font-bold matrix-text mb-2">Open Institute of Artificial Intelligence (OIAI)</h3>
+            <h3 className="text-xl font-bold matrix-text mb-2">Otermans Institute of Artificial Intelligence (OIAI)</h3>
             <p className="text-lg opacity-90 mb-2">AI Foundations & Ethics</p>
             <p className="text-sm text-matrix-green mb-3">Certificate of Completion</p>
           </div>
