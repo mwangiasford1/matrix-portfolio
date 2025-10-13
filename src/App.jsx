@@ -270,12 +270,7 @@ function App() {
                   period: '2025 - Present',
                   description: 'Developing robust APIs and database solutions for various clients'
                 },
-                {
-                  title: 'Software Engineering Student',
-                  company: 'University',
-                  period: '2025 - Present',
-                  description: 'Studying computer science with focus on backend development and system design'
-                },
+                
                 {
                   title: 'Graphics Designer',
                   company: 'Freelance',
