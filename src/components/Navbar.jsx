@@ -50,18 +50,23 @@ const Navbar = ({ matrixEnabled, toggleMatrix, scrollToSection }) => {
           <div className="flex items-center space-x-4">
             <button
               onClick={toggleMatrix}
-              className={`group relative overflow-hidden px-4 py-2 text-xs font-bold border rounded-full transition-all duration-500 hover:scale-110 hover:shadow-lg active:scale-95 ${
-                matrixEnabled 
-                  ? 'border-matrix-green text-matrix-green bg-matrix-green/10 hover:bg-matrix-green/20 hover:shadow-matrix-green/30' 
-                  : 'border-gray-500 text-gray-500 hover:border-matrix-green hover:text-matrix-green hover:shadow-matrix-green/20'
-              }`}
+              aria-pressed={matrixEnabled}
+              className="flex items-center gap-3"
             >
-              <span className="relative z-10 flex items-center gap-1">
-                <div className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  matrixEnabled ? 'bg-matrix-green animate-pulse' : 'bg-gray-500'
-                }`}></div>
-                MATRIX {matrixEnabled ? 'ON' : 'OFF'}
+              {/* Track */}
+              <span className={`relative inline-flex items-center w-14 h-7 rounded-full transition-colors duration-300 focus:outline-none ${
+                matrixEnabled ? 'bg-matrix-green/80 border border-matrix-green/60' : 'bg-gray-700/40 border border-gray-600'
+              }`}>
+                {/* Knob */}
+                <span className={`inline-block w-5 h-5 bg-white rounded-full shadow transform transition-transform duration-300 ${
+                  matrixEnabled ? 'translate-x-7 shadow-matrix-green/40' : 'translate-x-1'
+                }`} />
               </span>
+
+              {/* Label */}
+              <span className={`text-xs font-bold transition-colors duration-300 ${
+                matrixEnabled ? 'text-matrix-green' : 'text-gray-300'
+              }`}>MATRIX {matrixEnabled ? 'ON' : 'OFF'}</span>
             </button>
 
             {/* Mobile menu button */}
