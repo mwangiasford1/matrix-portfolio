@@ -373,7 +373,7 @@ function App() {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 sm:mb-12 text-center matrix-text">🏆 ACHIEVEMENTS.DB</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {[
-                { icon: '🎓', title: 'Software Engineering', desc: 'Currently pursuing degree' },
+                { icon: '🎓', title: 'Software Engineering', desc: 'Currently pursuing course' },
                 { icon: '💻', title: 'Full-Stack Projects', desc: '10+ completed projects' },
                 { icon: '🔧', title: 'API Development', desc: 'RESTful API specialist' },
                 { icon: '📊', title: 'Database Design', desc: 'MongoDB & SQL expert' },
