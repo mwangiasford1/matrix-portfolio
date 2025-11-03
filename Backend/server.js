@@ -11,17 +11,11 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Security Middleware
-app.use(helmet({
-  contentSecurityPolicy: {
-    directives: {
-      defaultSrc: ["'self'"],
-      styleSrc: ["'self'", "'unsafe-inline'"],
-      scriptSrc: ["'self'"],
-      imgSrc: ["'self'", "data:", "https:"],
-    },
-  },
-}));
+// Trust proxy for Render deployment
+app.set('trust proxy', 1);
+
+// Minimal security
+app.use(helmet({ contentSecurityPolicy: false }));
 
 // Rate limiting
 const limiter = rateLimit({
@@ -31,9 +25,9 @@ const limiter = rateLimit({
 });
 
 const contactLimiter = rateLimit({
-  windowMs: 60 * 60 * 1000, // 1 hour
-  max: 5, // limit each IP to 5 contact form submissions per hour
-  message: 'Too many contact form submissions, please try again later.'
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 10, // limit each IP to 10 contact form submissions per 15 minutes
+  message: 'Too many requests, please try again later.'
 });
 
 app.use(limiter);
@@ -103,44 +97,21 @@ const contactSchema = new mongoose.Schema({
 
 const Contact = mongoose.model('Contact', contactSchema);
 
-// Email transporter
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.GMAIL_USER,
-    pass: process.env.GMAIL_PASS
-  }
-});
-
-// Test email configuration on startup
-transporter.verify((error, success) => {
-  if (error) {
-    console.log('Email configuration error:', error);
-  } else {
-    console.log('Email server is ready to send messages');
-  }
-});
+// Email transporter (disabled for performance)
+// const transporter = nodemailer.createTransport({
+//   service: 'gmail',
+//   auth: {
+//     user: process.env.GMAIL_USER,
+//     pass: process.env.GMAIL_PASS
+//   }
+// });
 
 // Test route
 app.get('/api/test', (req, res) => {
   res.json({ message: 'Backend is working!' });
 });
 
-// Test email route
-app.post('/api/test-email', async (req, res) => {
-  try {
-    await transporter.sendMail({
-      from: process.env.GMAIL_USER,
-      to: process.env.GMAIL_USER,
-      subject: 'Test Email',
-      text: 'This is a test email from your portfolio backend.'
-    });
-    res.json({ message: 'Test email sent successfully' });
-  } catch (error) {
-    console.error('Test email error:', error);
-    res.status(500).json({ error: error.message });
-  }
-});
+
 
 // Routes with security
 app.post('/api/contact', contactLimiter, async (req, res) => {
@@ -172,11 +143,7 @@ app.post('/api/contact', contactLimiter, async (req, res) => {
       return res.status(400).json({ error: 'Message too long' });
     }
     
-    // Check for spam patterns
-    const spamPatterns = /\b(viagra|casino|lottery|winner|congratulations|click here|free money)\b/i;
-    if (spamPatterns.test(message) || spamPatterns.test(name)) {
-      return res.status(400).json({ error: 'Message contains prohibited content' });
-    }
+
     
     // Get client IP
     const clientIP = req.ip || req.connection.remoteAddress;
@@ -184,29 +151,9 @@ app.post('/api/contact', contactLimiter, async (req, res) => {
     // Save to database
     const contact = new Contact({ name, email, message, ip: clientIP });
     await contact.save();
-    console.log('Contact saved to database successfully');
+    console.log('Contact saved successfully');
 
-    // Send email notification
-    try {
-      await transporter.sendMail({
-        from: process.env.GMAIL_USER,
-        to: process.env.GMAIL_USER,
-        subject: 'New Portfolio Contact',
-        html: `
-          <h3>New Contact Form Submission</h3>
-          <p><strong>Name:</strong> ${name}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Message:</strong> ${message}</p>
-          <p><strong>IP:</strong> ${clientIP}</p>
-          <p><strong>Time:</strong> ${new Date().toISOString()}</p>
-        `
-      });
-      console.log('Email sent successfully');
-    } catch (emailError) {
-      console.log('Email failed but contact saved:', emailError.message);
-    }
-
-    res.status(201).json({ message: 'Contact saved successfully' });
+    res.status(201).json({ message: 'Message sent successfully!' });
   } catch (error) {
     console.error('Contact form error:', error);
     res.status(500).json({ error: 'Internal server error' });
