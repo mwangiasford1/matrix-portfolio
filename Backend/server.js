@@ -36,6 +36,7 @@ app.use(limiter);
 const corsOptions = {
   origin: [
     'https://matrix-portfolio-1.onrender.com',
+    'https://matrix-portfolio-7miu.onrender.com',
     'http://localhost:3000',
     'http://localhost:5173'
   ],
@@ -97,14 +98,14 @@ const contactSchema = new mongoose.Schema({
 
 const Contact = mongoose.model('Contact', contactSchema);
 
-// Email transporter (disabled for performance)
-// const transporter = nodemailer.createTransport({
-//   service: 'gmail',
-//   auth: {
-//     user: process.env.GMAIL_USER,
-//     pass: process.env.GMAIL_PASS
-//   }
-// });
+// Email transporter
+const transporter = nodemailer.createTransporter({
+  service: 'gmail',
+  auth: {
+    user: process.env.GMAIL_USER,
+    pass: process.env.GMAIL_PASS
+  }
+});
 
 // Test route
 app.get('/api/test', (req, res) => {
@@ -152,6 +153,22 @@ app.post('/api/contact', contactLimiter, async (req, res) => {
     const contact = new Contact({ name, email, message, ip: clientIP });
     await contact.save();
     console.log('Contact saved successfully');
+
+    // Send email
+    if (process.env.GMAIL_USER && process.env.GMAIL_PASS) {
+      setImmediate(async () => {
+        try {
+          await transporter.sendMail({
+            from: process.env.GMAIL_USER,
+            to: process.env.GMAIL_USER,
+            subject: 'New Portfolio Contact',
+            html: `<h3>New Contact</h3><p><strong>Name:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p><p><strong>Message:</strong> ${message}</p>`
+          });
+        } catch (err) {
+          console.log('Email failed:', err.message);
+        }
+      });
+    }
 
     res.status(201).json({ message: 'Message sent successfully!' });
   } catch (error) {

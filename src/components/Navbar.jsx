@@ -8,6 +8,7 @@ const Navbar = ({ matrixEnabled, toggleMatrix, scrollToSection }) => {
     { name: 'About', id: 'about' },
     { name: 'Skills', id: 'skills' },
     { name: 'Education', id: 'education' },
+    { name: 'Certificates', id: 'certificates' },
     { name: 'Projects', id: 'projects' },
     { name: 'Contact', id: 'contact' }
   ]

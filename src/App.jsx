@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import MatrixRain from './components/MatrixRain'
 import Navbar from './components/Navbar'
 import LoadingScreen from './components/LoadingScreen'
+import Certificates from './components/Certificates'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -367,14 +368,17 @@ function App() {
 </section>
 
 
+        {/* Certificates Section */}
+        <Certificates />
+
         {/* Achievements Section */}
         <section id="achievements" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <div className="max-w-6xl mx-auto w-full">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 sm:mb-12 text-center matrix-text">🏆 ACHIEVEMENTS.DB</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {[
-                { icon: '🎓', title: 'Software Engineering', desc: 'Currently pursuing course' },
-                { icon: '💻', title: 'Full-Stack Projects', desc: '10+ completed projects' },
+                { icon: '', title: 'Software Engineering', desc: 'Currently pursuing course' },
+                { icon: '', title: 'Full-Stack Projects', desc: '10+ completed projects' },
                 { icon: '🔧', title: 'API Development', desc: 'RESTful API specialist' },
                 { icon: '📊', title: 'Database Design', desc: 'MongoDB & SQL expert' },
                 { icon: '🎵', title: 'VirtualDJ Scripts', desc: 'Custom automation scripts' },
@@ -634,6 +638,7 @@ function App() {
                 <button onClick={() => scrollToSection('about')} className="block text-sm hover:text-matrix-green transition-colors">About</button>
                 <button onClick={() => scrollToSection('skills')} className="block text-sm hover:text-matrix-green transition-colors">Skills</button>
                 <button onClick={() => scrollToSection('education')} className="block text-sm hover:text-matrix-green transition-colors">Education</button>
+                <button onClick={() => scrollToSection('certificates')} className="block text-sm hover:text-matrix-green transition-colors">Certificates</button>
                 <button onClick={() => scrollToSection('projects')} className="block text-sm hover:text-matrix-green transition-colors">Projects</button>
                 <button onClick={() => scrollToSection('contact')} className="block text-sm hover:text-matrix-green transition-colors">Contact</button>
               </div>
