@@ -178,7 +178,7 @@ function App() {
                 </div>
               </div>
               <div className="order-3 lg:col-span-2">
-                <h3 className="text-2xl font-bold mb-6 matrix-text text-center lg:text-left">🛠️ TECH STACK</h3>
+                <h3 className="text-2xl font-bold mb-6 matrix-text text-center lg:text-left">TECH STACK</h3>
                 <div className="space-y-4">
                   <div>
                     <h4 className="text-matrix-green font-semibold mb-2">Backend</h4>
@@ -209,7 +209,7 @@ function App() {
         {/* Skills Section */}
         <section id="skills" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <div className="max-w-6xl mx-auto w-full">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 sm:mb-12 text-center matrix-text">⚡ SKILLS.EXE</h2>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 sm:mb-12 text-center matrix-text">SKILLS.EXE</h2>
             <div className="grid md:grid-cols-2 gap-8 sm:gap-12">
               <div className="bg-black/20 backdrop-blur-md border border-matrix-green/30 p-6 rounded-lg">
                 <h3 className="text-xl font-bold mb-6 matrix-text">Backend Development</h3>
@@ -262,7 +262,7 @@ function App() {
         {/* Experience Section */}
         <section id="experience" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <div className="max-w-4xl mx-auto w-full">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 sm:mb-12 text-center matrix-text">💼 EXPERIENCE.LOG</h2>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 sm:mb-12 text-center matrix-text">EXPERIENCE.LOG</h2>
             <div className="space-y-8">
               {[
                 {
@@ -301,7 +301,7 @@ function App() {
         {/* Education Section */}
 <section id="education" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
   <div className="max-w-4xl mx-auto w-full">
-    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 sm:mb-12 text-center matrix-text">🎓 EDUCATION.EDU</h2>
+    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 sm:mb-12 text-center matrix-text">EDUCATION.EDU</h2>
     <div className="space-y-8">
 
       {/* PLP Card */}
@@ -312,7 +312,7 @@ function App() {
             <p className="text-lg opacity-90 mb-2">Software Engineering Track</p>
             <p className="text-sm text-matrix-green mb-3">Specialization: MERN Stack Development</p>
           </div>
-          <div className="text-4xl">🚀</div>
+          <div className="text-4xl"></div>
         </div>
         <div className="space-y-2 text-sm opacity-80">
           <p>• Backend focus with hands-on API development and deployment</p>
@@ -329,7 +329,7 @@ function App() {
             <p className="text-lg opacity-90 mb-2">Cybersecurity for Beginners</p>
             <p className="text-sm text-matrix-green mb-3">Security Fundamentals Certification</p>
           </div>
-          <div className="text-4xl">🔒</div>
+          <div className="text-4xl"></div>
         </div>
         <div className="space-y-2 text-sm opacity-80">
           <p>• Introduction to cybersecurity principles and threat types</p>
@@ -346,7 +346,7 @@ function App() {
             <p className="text-lg opacity-90 mb-2">AI Foundations & Ethics</p>
             <p className="text-sm text-matrix-green mb-3">Certificate of Completion</p>
           </div>
-          <div className="text-4xl">🤖</div>
+          <div className="text-4xl"></div>
         </div>
         <div className="space-y-2 text-sm opacity-80">
           <p>• Explored core AI principles, machine learning basics, and ethical frameworks</p>
@@ -374,15 +374,15 @@ function App() {
         {/* Achievements Section */}
         <section id="achievements" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <div className="max-w-6xl mx-auto w-full">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 sm:mb-12 text-center matrix-text">🏆 ACHIEVEMENTS.DB</h2>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 sm:mb-12 text-center matrix-text">ACHIEVEMENTS.DB</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {[
                 { icon: '', title: 'Software Engineering', desc: 'Currently pursuing course' },
                 { icon: '', title: 'Full-Stack Projects', desc: '10+ completed projects' },
-                { icon: '🔧', title: 'API Development', desc: 'RESTful API specialist' },
-                { icon: '📊', title: 'Database Design', desc: 'MongoDB & SQL expert' },
-                { icon: '🎵', title: 'VirtualDJ Scripts', desc: 'Custom automation scripts' },
-                { icon: '⚡', title: 'Performance Optimization', desc: 'System efficiency expert' }
+                { icon: '', title: 'API Development', desc: 'RESTful API specialist' },
+                { icon: '', title: 'Database Design', desc: 'MongoDB & SQL expert' },
+                { icon: '', title: 'VirtualDJ Scripts', desc: 'Custom automation scripts' },
+                { icon: '', title: 'Performance Optimization', desc: 'System efficiency expert' }
               ].map((achievement, index) => (
                 <div key={index} className="bg-black/20 backdrop-blur-md border border-matrix-green/30 p-6 rounded-lg hover:border-matrix-green hover:scale-105 transition-all duration-300 text-center">
                   <div className="text-4xl mb-4">{achievement.icon}</div>
@@ -397,7 +397,7 @@ function App() {
         {/* Testimonials Section */}
         <section id="testimonials" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <div className="max-w-6xl mx-auto w-full">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 sm:mb-12 text-center matrix-text">💬 TESTIMONIALS.JSON</h2>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 sm:mb-12 text-center matrix-text">TESTIMONIALS.JSON</h2>
             <div className="grid md:grid-cols-2 gap-8">
               {[
                 {
@@ -431,10 +431,10 @@ function App() {
         {/* Projects Section */}
         <section id="projects" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <div className="max-w-6xl mx-auto w-full">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 sm:mb-12 text-center matrix-text">🚀 FEATURED PROJECTS</h2>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 sm:mb-12 text-center matrix-text">FEATURED PROJECTS</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               <div className="bg-black/20 backdrop-blur-md border border-matrix-green/30 p-6 hover:border-matrix-green transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-matrix-green/20 cursor-pointer group rounded-lg">
-                <h3 className="text-xl font-bold mb-4 matrix-text group-hover:animate-pulse">📁 Smart File Manager</h3>
+                <h3 className="text-xl font-bold mb-4 matrix-text group-hover:animate-pulse">Smart File Manager</h3>
                 <p className="opacity-80 mb-4 text-sm">
                   High-performance file management system built with C++. Features efficient file operations, memory management, and cross-platform compatibility.
                 </p>
@@ -450,7 +450,7 @@ function App() {
               </div>
               
               <div className="bg-black/20 backdrop-blur-md border border-matrix-green/30 p-6 hover:border-matrix-green transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-matrix-green/20 cursor-pointer group rounded-lg">
-                <h3 className="text-xl font-bold mb-4 matrix-text group-hover:animate-pulse">🎛️ Wireless Streaming Workflow</h3>
+                <h3 className="text-xl font-bold mb-4 matrix-text group-hover:animate-pulse">Wireless Streaming Workflow</h3>
                 <p className="opacity-80 mb-4 text-sm">
                   Optimized LAN/WLAN connectivity for low-latency streaming. Custom VirtualDJ scripts for seamless transitions.
                 </p>
@@ -466,7 +466,7 @@ function App() {
               </div>
               
               <div className="bg-black/20 backdrop-blur-md border border-matrix-green/30 p-6 hover:border-matrix-green transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-matrix-green/20 cursor-pointer group rounded-lg">
-                <h3 className="text-xl font-bold mb-4 matrix-text group-hover:animate-pulse">📄 Document Formatter</h3>
+                <h3 className="text-xl font-bold mb-4 matrix-text group-hover:animate-pulse">Document Formatter</h3>
                 <p className="opacity-80 mb-4 text-sm">
                   Automated formatting for educational assessments and church invitations. Error scanning and layout polishing.
                 </p>
@@ -482,7 +482,7 @@ function App() {
             </div>
             
             <div className="mt-12 sm:mt-16">
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 text-center matrix-text">📚 BLOG & INSIGHTS</h3>
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 text-center matrix-text">BLOG & INSIGHTS</h3>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 <div className="bg-black/10 backdrop-blur-sm border border-matrix-green/20 p-4 hover:border-matrix-green/50 transition-all duration-300 hover:scale-105 cursor-pointer rounded-lg hover:shadow-lg hover:shadow-matrix-green/10">
                   <h4 className="font-bold mb-2 text-matrix-green hover:animate-pulse">Debugging Thunder Client Requests Like a Pro</h4>
@@ -504,7 +504,7 @@ function App() {
         {/* Contact Section */}
         <section id="contact" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <div className="max-w-2xl mx-auto w-full bg-black/10 backdrop-blur-md border border-matrix-green/20 rounded-2xl p-6 sm:p-8 shadow-2xl shadow-black/50">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8 text-center matrix-text">📞 CONTACT ME</h2>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8 text-center matrix-text">CONTACT ME</h2>
             <p className="text-center mb-6 sm:mb-8 opacity-80 text-sm sm:text-base px-2">
               Let's build something unforgettable. Whether you're looking for a backend wizard, a creative media integrator, or just someone who loves solving tough problems—I'm your guy.
             </p>
@@ -549,13 +549,13 @@ function App() {
             </div>
             {submitStatus === 'success' && (
               <div className="mb-6 p-4 border border-matrix-green bg-matrix-green/10 backdrop-blur-sm text-center rounded-lg">
-                ✅ Message sent successfully! I'll get back to you soon.
+                Message sent successfully! I'll get back to you soon.
               </div>
             )}
             
             {submitStatus === 'error' && (
               <div className="mb-6 p-4 border border-red-500 bg-red-500/10 backdrop-blur-sm text-red-400 text-center rounded-lg">
-                ❌ Error sending message. Check console and ensure backend is running on port 5000.
+                Error sending message. Check console and ensure backend is running on port 5000.
               </div>
             )}
             
