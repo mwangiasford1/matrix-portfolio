@@ -98,12 +98,14 @@ const contactSchema = new mongoose.Schema({
 
 const Contact = mongoose.model('Contact', contactSchema);
 
-// Email transporter
-const transporter = nodemailer.createTransporter({
-  service: 'gmail',
+// Email transporter (SMTP via Gmail or custom SMTP)
+const transporter = nodemailer.createTransport({
+  host: process.env.SMTP_HOST || 'smtp.gmail.com',
+  port: parseInt(process.env.SMTP_PORT || '587', 10),
+  secure: (process.env.SMTP_SECURE || 'false').toLowerCase() === 'true', // true for 465, false for 587/25/2525
   auth: {
-    user: process.env.GMAIL_USER,
-    pass: process.env.GMAIL_PASS
+    user: process.env.GMAIL_USER || process.env.SMTP_USER,
+    pass: process.env.GMAIL_PASS || process.env.SMTP_PASS
   }
 });
 
@@ -154,16 +156,31 @@ app.post('/api/contact', contactLimiter, async (req, res) => {
     await contact.save();
     console.log('Contact saved successfully');
 
-    // Send email
-    if (process.env.GMAIL_USER && process.env.GMAIL_PASS) {
+    // Send email notification asynchronously; do not block response
+    if ((process.env.GMAIL_USER && process.env.GMAIL_PASS) || (process.env.SMTP_USER && process.env.SMTP_PASS)) {
       setImmediate(async () => {
         try {
+          const fromAddress = process.env.EMAIL_FROM || process.env.GMAIL_USER || process.env.SMTP_USER;
+          const toAddress = process.env.EMAIL_TO || process.env.GMAIL_USER || process.env.SMTP_USER;
+
           await transporter.sendMail({
-            from: process.env.GMAIL_USER,
-            to: process.env.GMAIL_USER,
+            from: fromAddress,
+            to: toAddress,
             subject: 'New Portfolio Contact',
+            text: `New contact submission\nName: ${name}\nEmail: ${email}\nMessage: ${message}`,
             html: `<h3>New Contact</h3><p><strong>Name:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p><p><strong>Message:</strong> ${message}</p>`
           });
+
+          // Optional: send confirmation to submitter if allowed
+          if (validator.isEmail(email) && (process.env.SEND_CONFIRMATION || '').toLowerCase() === 'true') {
+            await transporter.sendMail({
+              from: fromAddress,
+              to: email,
+              subject: 'We received your message',
+              text: `Hi ${name},\n\nThanks for reaching out. We've received your message and will get back to you soon.\n\n— Asford`,
+              html: `<p>Hi ${name},</p><p>Thanks for reaching out. We've received your message and will get back to you soon.</p><p>— Asford</p>`
+            });
+          }
         } catch (err) {
           console.log('Email failed:', err.message);
         }
